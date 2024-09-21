@@ -1,15 +1,28 @@
+import 'package:books_app/constatnts.dart';
+import 'package:books_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BookApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BookApp extends StatelessWidget {
+  const BookApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return ScreenUtilInit(
+      splitScreenMode: true,
+      minTextAdapt: true,
+      designSize: const Size(375, 812),
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme:
+            ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimarycolor),
+        home: const SplashView(),
+      ),
+    );
   }
 }
