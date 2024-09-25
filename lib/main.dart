@@ -1,4 +1,5 @@
 import 'package:books_app/constatnts.dart';
+import 'package:books_app/core/utils/app_router.dart';
 import 'package:books_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,13 +19,14 @@ class BookApp extends StatelessWidget {
       splitScreenMode: true,
       minTextAdapt: true,
       designSize: const Size(375, 812),
-      child: GetMaterialApp(
+      child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
             scaffoldBackgroundColor: kPrimarycolor,
             textTheme:
                 GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
-        home: const SplashView(),
+                routerConfig: AppRouter.route,
+      //  home: const SplashView(),
       ),
     );
   }
