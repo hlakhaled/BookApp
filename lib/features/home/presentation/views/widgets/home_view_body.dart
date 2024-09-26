@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.only(
-              top: 48.h,
+              top: 38.h,
               left: 30.w,
             ),
             child: const CustomAppBar(),
@@ -26,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: SizedBox(
-            height: 57.h,
+            height: 47.h,
           ),
         ),
         SliverToBoxAdapter(
@@ -37,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: SizedBox(
-            height: 68.h,
+            height: 58.h,
           ),
         ),
         SliverToBoxAdapter(

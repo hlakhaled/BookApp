@@ -11,18 +11,15 @@ class BookDetailsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         height: 112.h,
-        child: Padding(
-          padding: EdgeInsets.only(left: 30.w),
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: EdgeInsetsDirectional.only(end: 10.w),
-                child: const BookDetailsItem(),
-              );
-            },
-            itemCount: 5,
-          ),
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: EdgeInsetsDirectional.only(end: 10.w),
+              child: const BookDetailsItem(),
+            );
+          },
+          itemCount: 5,
         ));
   }
 }
