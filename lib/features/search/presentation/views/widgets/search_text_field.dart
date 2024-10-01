@@ -14,6 +14,7 @@ class SearchTextField extends StatelessWidget {
           focusedBorder: outlineInputBorder()),
     );
   }
+
   OutlineInputBorder outlineInputBorder() {
     return OutlineInputBorder(
         borderRadius: BorderRadius.circular(15),

@@ -1,16 +1,17 @@
 import 'package:books_app/constatnts.dart';
 import 'package:books_app/core/utils/app_router.dart';
 import 'package:books_app/core/utils/styles.dart';
+import 'package:books_app/features/home/data/models/book_model/book_model.dart';
+
 import 'package:books_app/features/home/presentation/views/widgets/rating.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({
-    super.key,
-  });
-
+  const BestSellerItem({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -22,8 +23,8 @@ class BestSellerItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(16.r),
-            child: Image.network(
-                "https://th.bing.com/th/id/OIP.FweYc1n9zcA08ZY_gWor8AHaLH?rs=1&pid=ImgDetMain",
+            child: CachedNetworkImage(
+                imageUrl: "${book.volumeInfo!.imageLinks!.thumbnail}",
                 height: 114.h,
                 width: 71.w,
                 fit: BoxFit.cover),
@@ -37,7 +38,7 @@ class BestSellerItem extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width * .5,
                 child: Text(
-                  "Harry Potter and the Goblet of Fire",
+                  "${book.volumeInfo!.title}",
                   style: Styles.textStyle20.copyWith(
                       fontFamily: kGTSectraFine, fontWeight: FontWeight.normal),
                   maxLines: 2,
@@ -48,7 +49,7 @@ class BestSellerItem extends StatelessWidget {
                 height: 3.h,
               ),
               Text(
-                "J.K. Rowling",
+                book.volumeInfo!.authors![0],
                 style: Styles.textStyle14.copyWith(
                     fontWeight: FontWeight.w500,
                     color: whiteColor.withOpacity(0.70)),
@@ -56,7 +57,7 @@ class BestSellerItem extends StatelessWidget {
               SizedBox(
                 height: 3.h,
               ),
-              const Rating()
+              Rating(book: book,)
             ],
           )
         ],

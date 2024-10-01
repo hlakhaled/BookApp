@@ -1,4 +1,3 @@
-
 import 'package:books_app/constatnts.dart';
 import 'package:books_app/core/utils/styles.dart';
 import 'package:books_app/features/home/presentation/views/widgets/button_details.dart';
@@ -42,9 +41,9 @@ class BooksDetailsSection extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 60.w),
-          child: const Rating(
-            isDetails: true,
-          ),
+        //  child: const Rating(
+           // isDetails: true,
+          //),
         ),
         SizedBox(
           height: 30.h,
