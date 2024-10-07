@@ -4,6 +4,7 @@ import 'package:books_app/core/utils/assets_data.dart';
 import 'package:books_app/features/home/presentation/views/home_view.dart';
 import 'package:books_app/features/splash/presentation/views/widgets/sliding_text.dart';
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
